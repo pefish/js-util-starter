@@ -5,7 +5,7 @@
   "main": "./lib/starter.js",
   "scripts": {
     "test": "mocha --require ts-node/register src/*.test.ts",
-    "build": "tsc && yarn tslint",
+    "build": "rm -rf lib types && tsc && yarn tslint",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "prepublish": "yarn build"
   },
