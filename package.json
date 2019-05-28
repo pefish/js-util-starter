@@ -1,0 +1,25 @@
+{
+  "name": "@pefish/js-util-starter",
+  "version": "0.0.1",
+  "types": "./types/*.d.ts",
+  "main": "./lib/starter.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register src/*.test.ts",
+    "build": "tsc && yarn tslint",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {
+    "@pefish/js-node-assist": "^0.6.0",
+    "@pefish/js-error": "^0.0.5"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^11.13.7",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  }
+}
