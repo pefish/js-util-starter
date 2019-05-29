@@ -8,9 +8,9 @@ declare global {
 }
 
 export default class StarterUtil {
-  static startAsync (method: () => Promise<void>, errCb: () => Promise<void> = null): void {
+  static startAsync (method: () => Promise<void>, errCb: () => Promise<void> = null, exitWhenFinish: boolean = false): void {
     method().then(() => {
-      process.exit(0)
+      exitWhenFinish && process.exit(0)
     }).catch(async (err) => {
       global.logger.error(err)
       errCb && (await errCb())
