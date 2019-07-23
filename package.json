@@ -1,7 +1,7 @@
 {
   "name": "@pefish/js-util-starter",
-  "version": "0.0.5",
-  "types": "./types/*.d.ts",
+  "version": "0.0.6",
+  "types": "./types/starter.d.ts",
   "main": "./lib/starter.js",
   "scripts": {
     "test": "mocha --require ts-node/register src/*.test.ts",
