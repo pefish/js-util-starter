@@ -1,7 +1,7 @@
-import StarterUtil from "./starter";
+import Starter from "./starter";
 
 describe("starter", () => {
-  StarterUtil.startAsync(async () => {
+  Starter.start(async () => {
     console.log(111);
   });
 });

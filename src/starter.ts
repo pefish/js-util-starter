@@ -1,12 +1,23 @@
-export default class StarterUtil {
-  static startAsync(
-    method: (abortSignal: AbortSignal) => Promise<void>,
+import { Logger } from "@pefish/js-logger";
+import "dotenv/config";
+
+export interface StartArgs {
+  logger: Logger;
+  abortSignal: AbortSignal;
+}
+
+export default class Starter {
+  static start(
+    method: (args: StartArgs) => Promise<void>,
     onExit?: (err: Error) => Promise<void>
   ): void {
     let shutDownCount = 0;
     const abortController = new AbortController();
 
-    method(abortController.signal)
+    method({
+      logger: new Logger(),
+      abortSignal: abortController.signal,
+    })
       .then(() => {
         onExit && onExit(null);
         process.exit(0);
